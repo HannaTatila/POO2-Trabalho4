@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Poo2-trabalho4 by HannaTatila</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/HannaTatila/POO2-Trabalho4">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Poo2-trabalho4</h1>
+            <h2>Trabalho 4 da disciplina de POO2 - Criação do game Mar&amp;moto.</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/HannaTatila/POO2-Trabalho4/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/HannaTatila/POO2-Trabalho4/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h2>
+<a id="trabalho-de-poo2" class="anchor" href="#trabalho-de-poo2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<b>Trabalho de POO2</b> </h2>
+
+<p><br>
+<b>Projeto:</b> Mar&amp;moto<br>
+<b>Responsável:</b> Hanna Tátila de Sousa e Neimar Paulo Alves<br>
+<br>
+<br></p>
+
+<h4>
+<a id="1-sumário" class="anchor" href="#1-sum%C3%A1rio" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<b>1. Sumário</b> </h4>
+
+<ul>
+<li>Descrição do propósito do sistema</li>
+<li>Minimundo</li>
+<li>Diagrama de Classe</li>
+<li>Padrões de Projeto</li>
+<li>MVC</li>
+<li>Teste de qualidade de código</li>
+<li>Guia do jogador
+<br>
+<h4>
+<a id="2-descrição-do-propósito-do-sistema" class="anchor" href="#2-descri%C3%A7%C3%A3o-do-prop%C3%B3sito-do-sistema" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<b>2. Descrição do Propósito do Sistema</b> </h4>
+ O sistema se trata de um jogo de distância que contém vários desafios e convida o usuário a percorrer longas distâncias, marcando muitos pontos. O jogo é sem fim, não possui níveis. A única finalidade é percorrer o maior número de distância possível, não ser atingido pelos obstáculos e coletar os bônus disponíveis na fase.<br>
+<br>
+<h4>
+<a id="3-descrição-do-minimundo" class="anchor" href="#3-descri%C3%A7%C3%A3o-do-minimundo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<b>3. Descrição do Minimundo</b> </h4>
+ A empresa desenvolvedora de jogos HTSGames precisa criar um novo jogo que prenda a atenção e desafie seus jogadores. Pensando nisso, a HTSGames planeja criar um jogo de distância.<br>
+<br>
+ Esse jogo possui como personagem principal um adorável peixinho. O peixinho precisa desviar de vários obstáculos marinhos que aparecem em seu caminho. A cada obstáculo ultrapassado, a pontuação é incrementada. Sendo que o personagem possui três vidas iniciais. A cada vez que é atingido por um obstáculo, o personagem perde uma vida. Se todas as vidas forem perdidas, o jogo é finalizado. Ao decorrer do jogo, aparecerão bônus em forma de moeda que devem ser coletados. Assim que atingir uma determinada quantidade de moedas coletadas, o peixinho evolui e fica mais "forte", se transformando em um peixe ousado montado em sua moto radical. Por isso, se atingido por algum obstáculo enquanto estiver no estado de evolução, ele não perde uma vida, apenas perde os poderes e benefícios vindos da evolução e volta a ser um peixinho adorável. Quando o peixinho evolui, seus poderes acabam invocando novos inimigos vindos do mundo dos mortos. O peixe então, agora precisa desviar de mais esses obstáculos, porém esses novos inimigos só aparecem para atrapalhar, eles não incrementam a pontuação do jogador quando ultrapassados.<br>
+<br>
+ Além disso, ao iniciar o jogo, o jogador precisa informar um nome que depois será associado à pontuação máxima atingida pelo jogador. O cadastro de nome possui algumas restrições, como: quantidade máxima de 10 caracteres, sendo que não pode conter caracteres especiais. Toda vez ao entrar no jogo, o jogador deverá inserir seu nome. Se o nome apresentado já estiver cadastrado, então sua pontuação máxima será atualizada caso ultrapasse seu recorde atual.<br>
+<br>
+ O jogador terá a possibilidade de consultar o ranking do jogo, que exibe, ordenadamente, a pontuação de cada jogador.<br>
+<br>
+ Nota: Por enquanto o jogo só possui as funcionalidades básicas. O personagem precisa fugir dos obstáculos que surgem em seu caminho. Caso atinja um obstáculo, perde uma vida. Futuramente, o jogo será incrementado e terá as outras funcionalidades sugeridas implementadas.<br>
+<br>
+<h4>
+<a id="4-diagrama-de-classe" class="anchor" href="#4-diagrama-de-classe" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<b>4. Diagrama de Classe</b> </h4>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trab1/blob/gh-pages/DiagramaClasse_Mar&amp;moto.png?raw=true" alt="">
+<br>
+<br>
+<h4>
+<a id="5padrões-de-projeto" class="anchor" href="#5padr%C3%B5es-de-projeto" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<b>5.Padrões de Projeto</b> </h4>
+<br>
+<b>5.1 Padrão Método Fábrica</b> 
+<br>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaFabrica.png?raw=true" alt="">
+<br>
+<br>
+ O padrão Método Fábrica possui a intenção de definir uma interface para criar um objeto, mas deixar as subclasses decidirem que classe instanciar. O Método Fábrica permite adiar a instanciação para subclasses.
+No jogo foi criada uma FabricaSprites para abstrair a criação dos obstáculos e do personagem.
+<br>
+<br>
+<b>5.2 Padrão Protótipo</b> 
+<br>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaPrototipo.png?raw=true" alt="">
+<br>
+<br>
+ A intenção do padrão Protótipo é especificar tipos de objetos a serem criados usando uma instância protótipo e criar novos objetos pela cópia desse protótipo.
+Precisamos criar novos objetos a partir de uma instância protótipo, que vai realizar uma cópia de si mesmo e retornar para o novo objeto.
+Como o jogo cria vários obstáculos durante uma partida, seria bem mais custoso instanciar toda vez um novo objeto. Aplicando esse padrão, a partir de uma instância de um ObstáculoProtótipo é possível criar vários obstáculos a partir da cópia deste ObstáculoProtótipo.
+<br>
+<br>
+<b>5.3 Padrão Flyweight</b> 
+<br>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaFlyweight.png?raw=true" alt="">
+<br>
+<br>
+ A intenção do padrão Flyweight é usar compartilhamento para suportar eficientemente grandes quantidades de objetos de granularidade fina. No jogo em questão, o padrão foi aplicado para o compartilhamento de imagens entre as entidades. A FlyweightFabrica é instanciada, por enquanto, apenas uma vez e nela todas as imagens dos obstáculos e do personagem são carregadas de seus respectivos diretórios. Quando um método requisitar essas imagens (o que acontece várias vezes durante o jogo, já que vários obstáculos são impressos durante uma partida), elas já estarão carregadas e só terão que ser impressas na tela.
+<br>
+<br>
+<b>5.4 Padrão Singleton</b> 
+<br>
+<br>
+ A solução implementada pelo padrão Flyweight é bem intuitiva. No entanto, na classe FlyweightFabrica fica centralizado o acesso a todos os objetos compartilhados. O que aconteceria se houvessem duas ou mais instâncias desta classe? Seriam criados vários objetos, sem nenhuma necessidade. Se eu criasse, por exemplo, uma outra AplJogo para utilizar outro módulo de jogo que também fizesse uso do FlyweightFabrica, esses novos objetos seriam criados desnecessariamente.
+Para evitar este problema foi implementado o padrão Singleton. Aplicando este padrão na classe fábrica, garantimos que apenas uma instância dela será utilizada em todo o projeto.
+<br>
+<br>
+<b>5.5 Padrão DAO</b> 
+<br>
+<br>
+ O padrão de projeto DAO nos permite separar a lógica de negócios da lógica de persistência de dados. Então foi criada uma classe DAOJogador que ficou responsável por trocar informações com o SGBD e fornecer operações de consulta e inserção de dados referentes ao cadastro e validação de dados do jogador.
+<br>
+<br>
+<h4>
+<a id="6-mvc" class="anchor" href="#6-mvc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<b>6. MVC</b> </h4>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaCamadas.png?raw=true" alt="">
+<br>
+<br>
+Foram criadas 4 camadas principais:
+<ul>
+<li>
+<b>CIU:</b> representa a camada de visão. Possui duas outras camadas chamadas CIH, que possui classes referentes às telas (impressão das imagens, textos); e CCI, que possui os controladores do jogo e do menu. </li>
+<li>
+<b>CLN:</b> representa a camada de lógica de negócio. Possui duas outras camadas chamadas CGT, que possui um APLJogo e a classe referente à aplicação do Método Fábrica; e CDP, que possui as classes que representam as entidades principais do sistema.</li>
+<li>
+<b>CGD:</b> representa a camada de persistência. Possui a classe DAOJogador que é responsável por executar ações no banco de dados.</li>
+<li>
+<b>PRINCIPAL:</b> possui apenas o módulo main do sistema.</li>
+</ul>
+Além disso existem os diretórios de Recursos, que possuem as imagens e os áudios; e o diretório de testes.
+<br>
+<h4>
+<a id="7-teste-de-qualidade-de-cÓdigo" class="anchor" href="#7-teste-de-qualidade-de-c%C3%93digo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<b>7. TESTE DE QUALIDADE DE CÓDIGO</b> </h4>
+<br>
+O teste de qualidade do código foi obtida por meio do software SonarQube. A figura 1 mostra os resultados da primeira análise feita no código. Essa versão possui apenas o Método Fábrica implementado.
+<br>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trab1/blob/gh-pages/sonar.png?raw=true" alt="">
+<br>
+<br>
+Uma nova análise foi feita em uma versão com implementação da parte de Persistência. A complexidade gral do código aumentou significativamente, talvez por causa das chamadas e retornos exigidas pela implementação da persistência.
+<br>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/sonarPersistenciaFabrica.png?raw=true" alt="">
+<br>
+<br>
+Depois o padrão protótipo foi implementado. Podemos observar que a complexidade das funções diminuiu um pouco.
+<br>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/sonarPrototipo.png?raw=true" alt="">
+<br>
+<br>
+A última versão teve os padrões Flyweight, Singleton e Adapter implementados. A complexidade geral aumentou um pouco, porém os outros valores continuaram próximos.
+<br>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/sonarU.png?raw=true" alt="">
+<br>
+<br>
+<h4>
+<a id="7-guia-do-jogador" class="anchor" href="#7-guia-do-jogador" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<b>7. Guia do jogador</b> </h4>
+<br>
+<em>(* Para implementação do jogo foi utilizado o Python 3.4 *)</em>
+<ul>
+<li>O jogo é todo controlado por comandos do teclado; </li>
+<li>Ao iniciar, o jogo apresenta uma tela de menu. Apenas as funcionalidades “INICIAR”, "CADASTRAR" e “SAIR” já estão devidamente implementadas;</li>
+<li>Navegue pelos itens do menu utilizando as setas do teclado para cima e para baixo. Para a cessar as funcionalidades, utilize a tecla Enter;</li>
+<li>Para iniciar o jogo é preciso ter um login devidamente cadastrado. Para isso acesse a opção CADASTRAR. Digite seu login e tecle Enter. Digite sua senha e tecle Enter;</li>
+<li>Para jogar, acesse a opção Jogar. Digite seu login e senha cadastrado e tecle Enter;</li>
+<li>Para movimentar o peixinho, utilize a seta para cima (você pode apertar e segurar a tecla para o peixinho se movimentar mais rápido);</li>
+<li>Se o peixinho encostar em algum inimigo que surgir em seu caminho, terá uma vida descontada (a vida é representada pelas gotinhas no canto superior esquerdo da tela). Caso perca três vidas o jogo será finalizado;</li>
+<li>No canto superior esquerdo é possível observar o 'Score' da fase, que é incrementado toda vez que o peixinho consegue ultrapassar um obstáculo.</li>
+<li>Para abortar o jogo a qualquer momento, utilize a tecla de espaço.</li>
+</ul>
+<br>
+<br>
+</li>
+</ul>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/HannaTatila">HannaTatila</a> can be found on <a href="https://github.com/HannaTatila/POO2-Trabalho4">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
