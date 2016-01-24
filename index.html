@@ -69,6 +69,9 @@
 <li>Teste de qualidade de código</li>
 <li>Guia do jogador
 <br>
+<br>
+<br>
+<br>
 <h4>
 <a id="2-descrição-do-propósito-do-sistema" class="anchor" href="#2-descri%C3%A7%C3%A3o-do-prop%C3%B3sito-do-sistema" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 <b>2. Descrição do Propósito do Sistema</b> </h4>
@@ -85,7 +88,6 @@
 <br>
  O jogador terá a possibilidade de consultar o ranking do jogo, que exibe, ordenadamente, a pontuação de cada jogador.<br>
 <br>
- Nota: Por enquanto o jogo só possui as funcionalidades básicas. O personagem precisa fugir dos obstáculos que surgem em seu caminho. Caso atinja um obstáculo, perde uma vida. Futuramente, o jogo será incrementado e terá as outras funcionalidades sugeridas implementadas.<br>
 <br>
 <h4>
 <a id="4-diagrama-de-classe" class="anchor" href="#4-diagrama-de-classe" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
@@ -196,14 +198,17 @@ A última versão teve os padrões Flyweight, Singleton e Adapter implementados.
 <em>(* Para implementação do jogo foi utilizado o Python 3.4 *)</em>
 <ul>
 <li>O jogo é todo controlado por comandos do teclado; </li>
-<li>Ao iniciar, o jogo apresenta uma tela de menu. Apenas as funcionalidades “INICIAR”, "CADASTRAR" e “SAIR” já estão devidamente implementadas;</li>
+<li>Ao iniciar, o jogo apresenta uma tela de menu com as funcionalidades “INICIAR”, "CADASTRAR", "RANKING" e “SAIR”;</li>
 <li>Navegue pelos itens do menu utilizando as setas do teclado para cima e para baixo. Para a cessar as funcionalidades, utilize a tecla Enter;</li>
 <li>Para iniciar o jogo é preciso ter um login devidamente cadastrado. Para isso acesse a opção CADASTRAR. Digite seu login e tecle Enter. Digite sua senha e tecle Enter;</li>
-<li>Para jogar, acesse a opção Jogar. Digite seu login e senha cadastrado e tecle Enter;</li>
-<li>Para movimentar o peixinho, utilize a seta para cima (você pode apertar e segurar a tecla para o peixinho se movimentar mais rápido);</li>
+<li>Para jogar, acesse a opção INICIAR. Digite seu login e senha cadastrado e tecle Enter;</li>
+<li>Para movimentar o peixinho, utilize a seta para cima (você deve apertar e segurar a tecla para o peixinho se movimentar mais rápido);</li>
 <li>Se o peixinho encostar em algum inimigo que surgir em seu caminho, terá uma vida descontada (a vida é representada pelas gotinhas no canto superior esquerdo da tela). Caso perca três vidas o jogo será finalizado;</li>
-<li>No canto superior esquerdo é possível observar o 'Score' da fase, que é incrementado toda vez que o peixinho consegue ultrapassar um obstáculo.</li>
+<li>Centralizado na parte superior da tela, é possível observar a 'Pontuação' da fase, que é incrementado toda vez que o peixinho consegue ultrapassar um obstáculo marinho.</li>
+<li> No canto superior direito, temos o somatório das moedas coletadas. Quando atingir determinada quantidade de moedas, o peixinho evolui e torna o jogo um pouco mais interessante ;) </li>
+<li>Observe que quando o bônus é atingido o ambiente fica especialmente diferente. Novos inimigos surgem e o peixinho não pode deixar ser atingido, caso isso aconteça, o peixinho vai perder sua evolução e o jogo voltará ao estado anterior. Continue coletando moedas para novamente atingir o bônus, que a cada vez precisará de mais moedas para ser atingido.</li>
 <li>Para abortar o jogo a qualquer momento, utilize a tecla de espaço.</li>
+<li>Para visualizar o ranking do jogo com os recordes dos melhores jogadores, navegue até a opção RANKING do menu e tecle Enter. Para voltar ao menu inicial, tecle Enter novamente.</li>
 </ul>
 <br>
 <br>
