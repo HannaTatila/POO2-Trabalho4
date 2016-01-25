@@ -107,7 +107,7 @@
 <br>
 <br>
  O padrão Método Fábrica possui a intenção de definir uma interface para criar um objeto, mas deixar as subclasses decidirem que classe instanciar. O Método Fábrica permite adiar a instanciação para subclasses.
-No jogo foi criada uma FabricaSprites para abstrair a criação dos obstáculos e do personagem.
+No jogo foi criada uma FabricaSprites para abstrair a criação dos obstáculos, do personagem, das moedas e dos peixes esqueletos.
 <br>
 <br>
 <b>5.2 Padrão Protótipo</b> 
@@ -118,7 +118,7 @@ No jogo foi criada uma FabricaSprites para abstrair a criação dos obstáculos 
 <br>
  A intenção do padrão Protótipo é especificar tipos de objetos a serem criados usando uma instância protótipo e criar novos objetos pela cópia desse protótipo.
 Precisamos criar novos objetos a partir de uma instância protótipo, que vai realizar uma cópia de si mesmo e retornar para o novo objeto.
-Como o jogo cria vários obstáculos durante uma partida, seria bem mais custoso instanciar toda vez um novo objeto. Aplicando esse padrão, a partir de uma instância de um ObstáculoProtótipo é possível criar vários obstáculos a partir da cópia deste ObstáculoProtótipo.
+Como o jogo cria vários obstáculos, moedas e peixes esqueletos durante uma partida, seria bem mais custoso instanciar toda vez um novo objeto. Aplicando esse padrão, a partir de uma instância de um PeixeEspadaProtótipo, por exemplo, é possível criar vários obstáculos a partir da cópia deste PeixeEspadaProtótipo.
 <br>
 <br>
 <b>5.3 Padrão Flyweight</b> 
@@ -127,7 +127,7 @@ Como o jogo cria vários obstáculos durante uma partida, seria bem mais custoso
 <img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaFlyweight.png?raw=true" alt="">
 <br>
 <br>
- A intenção do padrão Flyweight é usar compartilhamento para suportar eficientemente grandes quantidades de objetos de granularidade fina. No jogo em questão, o padrão foi aplicado para o compartilhamento de imagens entre as entidades. A FlyweightFabrica é instanciada, por enquanto, apenas uma vez e nela todas as imagens dos obstáculos e do personagem são carregadas de seus respectivos diretórios. Quando um método requisitar essas imagens (o que acontece várias vezes durante o jogo, já que vários obstáculos são impressos durante uma partida), elas já estarão carregadas e só terão que ser impressas na tela.
+ A intenção do padrão Flyweight é usar compartilhamento para suportar eficientemente grandes quantidades de objetos de granularidade fina. No jogo em questão, o padrão foi aplicado para o compartilhamento de imagens entre as entidades. A FlyweightFabrica é instanciada, por enquanto, apenas uma vez e nela todas as imagens dos obstáculos, do personagem, da moeda e do peixe esqueleto são carregadas de seus respectivos diretórios. Quando um método requisitar essas imagens (o que acontece várias vezes durante o jogo, já que vários obstáculos são impressos durante uma partida, assim como as moedas e os peixes esqueletos), elas já estarão carregadas e só terão que ser impressas na tela.
 <br>
 <br>
 <b>5.4 Padrão Singleton</b> 
@@ -137,7 +137,23 @@ Como o jogo cria vários obstáculos durante uma partida, seria bem mais custoso
 Para evitar este problema foi implementado o padrão Singleton. Aplicando este padrão na classe fábrica, garantimos que apenas uma instância dela será utilizada em todo o projeto.
 <br>
 <br>
-<b>5.5 Padrão DAO</b> 
+<b>5.5 Padrão State</b> 
+<br>
+<br>
+ A intenção do padrão State é permitir a um objeto alterar seu comportamento quando seu estado interno muda. O objeto parecerá ter mudado de classe.
+O padrão foi utilizado na implementação do Menu do jogo. Foi criada uma classe EstadoMenu que contém a interface básica de todos os estados do menu(Iniciar, Cadastrar, Ranking e Sair). No caso, as operações básicas que vão fazer parte da interface são: próximo valor, valor anterior e selecionar valor. Segue abaixo a implementação da classe EstadoMenu, demonstrando como representar uma interface em Python:
+<br>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trabalho4/blob/master/InterfacePython.png?raw=true" alt="">
+<br>
+<br>
+Todos os estados do menu implementaram as operações de troca de estado. Desse modo, cada operação retorna um objeto do tipo EstadoMenu, pois como cada operação representa uma troca de estados, será retornado o novo estado que o menu deve assumir. Dessa forma, a aplicação desse padrão ajuda a abstrair a implementação de cada opção do menu, além de deixar o código mais limpo, evitando o uso de diversos if's para identificar em qual opção do menu o usuário está e deixando o código mais organizado. Da forma que estava implementado antes da aplicação do padrão o código estava extremamente feio, com uma quantidade excessiva de if's e com tudo acontecendo dentro de um mesmo método.
+<br>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trabalho4/blob/master/DiagramaState.png?raw=true" alt="">
+<br>
+<br>
+<b>5.? Padrão DAO</b> 
 <br>
 <br>
  O padrão de projeto DAO nos permite separar a lógica de negócios da lógica de persistência de dados. Então foi criada uma classe DAOJogador que ficou responsável por trocar informações com o SGBD e fornecer operações de consulta e inserção de dados referentes ao cadastro e validação de dados do jogador.
@@ -185,7 +201,7 @@ Depois o padrão protótipo foi implementado. Podemos observar que a complexidad
 <img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/sonarPrototipo.png?raw=true" alt="">
 <br>
 <br>
-A última versão teve os padrões Flyweight, Singleton e Adapter implementados. A complexidade geral aumentou um pouco, porém os outros valores continuaram próximos.
+A última versão teve os padrões Flyweight e Singleton implementados. A complexidade geral aumentou um pouco, porém os outros valores continuaram próximos.
 <br>
 <br>
 <img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/sonarU.png?raw=true" alt="">
