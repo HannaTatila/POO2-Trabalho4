@@ -150,6 +150,9 @@ Para evitar este problema foi implementado o padrão Singleton. Aplicando este p
 <b>5.5 Padrão State</b> </h4>
 <br>
 <br>
+<img src="https://github.com/HannaTatila/POO2-Trabalho4/blob/master/DiagramaState.png?raw=true" alt="">
+<br>
+<br>
  A intenção do padrão State é permitir a um objeto alterar seu comportamento quando seu estado interno muda. O objeto parecerá ter mudado de classe.<br>
 O padrão foi utilizado na implementação do Menu do jogo. Foi criada uma classe EstadoMenu que contém a interface básica de todos os estados do menu(Iniciar, Cadastrar, Ranking e Sair). No caso, as operações básicas que vão fazer parte da interface são: próximo valor, valor anterior e selecionar valor. Segue abaixo a implementação da classe EstadoMenu, demonstrando como representar uma interface em Python:
 <br>
@@ -160,19 +163,16 @@ O padrão foi utilizado na implementação do Menu do jogo. Foi criada uma class
 Todos os estados do menu implementaram as operações de troca de estado. Desse modo, cada operação retorna um objeto do tipo EstadoMenu, pois como cada operação representa uma troca de estados, será retornado o novo estado que o menu deve assumir. Dessa forma, a aplicação desse padrão ajuda a abstrair a implementação de cada opção do menu, além de deixar o código mais limpo, evitando o uso de diversos if's para identificar em qual opção do menu o usuário está e deixando o código mais organizado. Da forma que estava implementado antes da aplicação do padrão o código estava extremamente feio, com uma quantidade excessiva de if's e com tudo acontecendo dentro de um mesmo método.
 <br>
 <br>
-<img src="https://github.com/HannaTatila/POO2-Trabalho4/blob/master/DiagramaState.png?raw=true" alt="">
-<br>
-<br>
 <h4>
 <a id="56-padrão-memento" class="anchor" href="#56-padr%C3%A3o-memento" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 <b>5.6 Padrão Memento</b> </h4>
 <br>
 <br>
+<img src="https://github.com/HannaTatila/POO2-Trabalho4/blob/master/DiagramaMemento.png?raw=true" alt="">
+<br>
+<br>
  O objetivo do padrão Memento é, sem violar o encapsulamento, capturar e externalizar um estado interno de um objeto, de maneira que o objeto possa ser restaurado para esse estado mais tarde. No jogo, quando o jogador coleta uma determinada quantidade de moedas, o jogo em si passa por uma evolução, o fundo, a música e o personagem são alterados.<br> 
 O estado interno do objeto é o personagem na forma de peixinho. Assim, o padrão Memento permite capturar o estado do personagem para que depois ele possa ser reutilizado. Então, quando o estado do personagem muda para o motoqueiro, o estado do peixinho fica guardado. Então quando o peixe motoqueiro é atingido por algum obstáculo, o estado do personagem é restaurado.
-<br>
-<br>
-<img src="https://github.com/HannaTatila/POO2-Trabalho4/blob/master/DiagramaMemento.png?raw=true" alt="">
 <br>
 <br>
 <h4>
@@ -180,12 +180,12 @@ O estado interno do objeto é o personagem na forma de peixinho. Assim, o padrã
 <b>5.7 Padrão Observer</b> </h4>
 <br>
 <br>
+<img src="https://github.com/HannaTatila/POO2-Trabalho4/blob/master/DiagramaObserver.png?raw=true" alt="">
+<br>
+<br>
 O objetivo do padrão Observer é definir uma dependência um para muitos entre objetos, de maneira que quando um objeto muda de estado todos os seus dependentes são notificados e atualizados automaticamente.<br>
 Esse padrão foi utilizado para controlar a detecção dos eventos de entrada do usuário através do teclado. Assim, quando uma tecla é digitada, os Controladores do Menu e Jogo são notificados e fazem mudanças relativas aos eventos detectados.
 Foi criada uma classe EventosTeclado que mantém o conjunto de dados e uma lista de dependentes deste conjunto de dados, assim a cada vez que o usuário digita uma tecla, todos os dependentes são notificados. 
-<br>
-<br>
-<img src="https://github.com/HannaTatila/POO2-Trabalho4/blob/master/DiagramaObserver.png?raw=true" alt="">
 <br>
 <br>
 <h4>
