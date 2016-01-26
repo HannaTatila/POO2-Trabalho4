@@ -104,7 +104,6 @@
 <a id="51-padrão-método-fábrica" class="anchor" href="#51-padr%C3%A3o-m%C3%A9todo-f%C3%A1brica" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 <b>5.1 Padrão Método Fábrica</b> </h4>
 <br>
-<br>
 <img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaFabrica.png?raw=true" alt="">
 <br>
 <br>
@@ -112,10 +111,10 @@
 No jogo foi criada uma FabricaSprites para abstrair a criação dos obstáculos, do personagem, das moedas e dos peixes esqueletos.
 <br>
 <br>
+<br>
 <h4>
 <a id="52-padrão-protótipo" class="anchor" href="#52-padr%C3%A3o-prot%C3%B3tipo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 <b>5.2 Padrão Protótipo</b> </h4>
-<br>
 <br>
 <img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaPrototipo.png?raw=true" alt="">
 <br>
@@ -125,10 +124,10 @@ Precisamos criar novos objetos a partir de uma instância protótipo, que vai re
 Como o jogo cria vários obstáculos, moedas e peixes esqueletos durante uma partida, seria bem mais custoso instanciar toda vez um novo objeto. Aplicando esse padrão, a partir de uma instância de um PeixeEspadaProtótipo, por exemplo, é possível criar vários obstáculos a partir da cópia deste PeixeEspadaProtótipo.
 <br>
 <br>
+<br>
 <h4>
 <a id="53-padrão-flyweight" class="anchor" href="#53-padr%C3%A3o-flyweight" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 <b>5.3 Padrão Flyweight</b> </h4>
-<br>
 <br>
 <img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaFlyweight.png?raw=true" alt="">
 <br>
@@ -136,19 +135,19 @@ Como o jogo cria vários obstáculos, moedas e peixes esqueletos durante uma par
  A intenção do padrão Flyweight é usar compartilhamento para suportar eficientemente grandes quantidades de objetos de granularidade fina. No jogo em questão, o padrão foi aplicado para o compartilhamento de imagens entre as entidades. A FlyweightFabrica é instanciada, por enquanto, apenas uma vez e nela todas as imagens dos obstáculos, do personagem, da moeda e do peixe esqueleto são carregadas de seus respectivos diretórios. Quando um método requisitar essas imagens (o que acontece várias vezes durante o jogo, já que vários obstáculos são impressos durante uma partida, assim como as moedas e os peixes esqueletos), elas já estarão carregadas e só terão que ser impressas na tela.
 <br>
 <br>
+<br>
 <h4>
 <a id="54-padrão-singleton" class="anchor" href="#54-padr%C3%A3o-singleton" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 <b>5.4 Padrão Singleton</b> </h4>
-<br>
 <br>
  A solução implementada pelo padrão Flyweight é bem intuitiva. No entanto, na classe FlyweightFabrica fica centralizado o acesso a todos os objetos compartilhados. O que aconteceria se houvessem duas ou mais instâncias desta classe? Seriam criados vários objetos, sem nenhuma necessidade. Se eu criasse, por exemplo, uma outra AplJogo para utilizar outro módulo de jogo que também fizesse uso do FlyweightFabrica, esses novos objetos seriam criados desnecessariamente.
 Para evitar este problema foi implementado o padrão Singleton. Aplicando este padrão na classe fábrica, garantimos que apenas uma instância dela será utilizada em todo o projeto.
 <br>
 <br>
+<br>
 <h4>
 <a id="55-padrão-state" class="anchor" href="#55-padr%C3%A3o-state" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 <b>5.5 Padrão State</b> </h4>
-<br>
 <br>
 <img src="https://github.com/HannaTatila/POO2-Trabalho4/blob/master/DiagramaState.png?raw=true" alt="">
 <br>
@@ -163,10 +162,10 @@ O padrão foi utilizado na implementação do Menu do jogo. Foi criada uma class
 Todos os estados do menu implementaram as operações de troca de estado. Desse modo, cada operação retorna um objeto do tipo EstadoMenu, pois como cada operação representa uma troca de estados, será retornado o novo estado que o menu deve assumir. Dessa forma, a aplicação desse padrão ajuda a abstrair a implementação de cada opção do menu, além de deixar o código mais limpo, evitando o uso de diversos if's para identificar em qual opção do menu o usuário está e deixando o código mais organizado. Da forma que estava implementado antes da aplicação do padrão o código estava extremamente feio, com uma quantidade excessiva de if's e com tudo acontecendo dentro de um mesmo método.
 <br>
 <br>
+<br>
 <h4>
 <a id="56-padrão-memento" class="anchor" href="#56-padr%C3%A3o-memento" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 <b>5.6 Padrão Memento</b> </h4>
-<br>
 <br>
 <img src="https://github.com/HannaTatila/POO2-Trabalho4/blob/master/DiagramaMemento.png?raw=true" alt="">
 <br>
@@ -175,10 +174,10 @@ Todos os estados do menu implementaram as operações de troca de estado. Desse 
 O estado interno do objeto é o personagem na forma de peixinho. Assim, o padrão Memento permite capturar o estado do personagem para que depois ele possa ser reutilizado. Então, quando o estado do personagem muda para o motoqueiro, o estado do peixinho fica guardado. Então quando o peixe motoqueiro é atingido por algum obstáculo, o estado do personagem é restaurado.
 <br>
 <br>
+<br>
 <h4>
 <a id="57-padrão-observer" class="anchor" href="#57-padr%C3%A3o-observer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 <b>5.7 Padrão Observer</b> </h4>
-<br>
 <br>
 <img src="https://github.com/HannaTatila/POO2-Trabalho4/blob/master/DiagramaObserver.png?raw=true" alt="">
 <br>
@@ -188,12 +187,13 @@ Esse padrão foi utilizado para controlar a detecção dos eventos de entrada do
 Foi criada uma classe EventosTeclado que mantém o conjunto de dados e uma lista de dependentes deste conjunto de dados, assim a cada vez que o usuário digita uma tecla, todos os dependentes são notificados. 
 <br>
 <br>
+<br>
 <h4>
 <a id="58-padrão-dao" class="anchor" href="#58-padr%C3%A3o-dao" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 <b>5.8 Padrão DAO</b> </h4>
 <br>
-<br>
  O padrão de projeto DAO nos permite separar a lógica de negócios da lógica de persistência de dados. Então foi criada uma classe DAOJogador que ficou responsável por trocar informações com o SGBD e fornecer operações de consulta e inserção de dados referentes ao cadastro e validação de dados do jogador.
+<br>
 <br>
 <br>
 <h4>
@@ -206,15 +206,22 @@ Foi criada uma classe EventosTeclado que mantém o conjunto de dados e uma lista
 Foram criadas 4 camadas principais:
 <ul>
 <li>
-<b>CIU:</b> representa a camada de visão. Possui duas outras camadas chamadas CIH, que possui classes referentes às telas (impressão das imagens, textos); e CCI, que possui os controladores do jogo e do menu. </li>
+<b>CIU:</b> representa a camada de visão. Possui duas outras camadas chamadas CIH, que possui classes referentes às telas (impressão das imagens, textos); e CCI, que possui os controladores. </li>
 <li>
-<b>CLN:</b> representa a camada de lógica de negócio. Possui duas outras camadas chamadas CGT, que possui um APLJogo e a classe referente à aplicação do Método Fábrica; e CDP, que possui as classes que representam as entidades principais do sistema.</li>
+<b>CLN:</b> representa a camada de lógica de negócio. Possui duas outras camadas chamadas CGT, que possui as APL's do jogo; e CDP, que possui as classes que representam as entidades principais do sistema.</li>
 <li>
-<b>CGD:</b> representa a camada de persistência. Possui a classe DAOJogador que é responsável por executar ações no banco de dados.</li>
+<b>CGD:</b> representa a camada de persistência. Possui classes responsáveis por executar ações no banco de dados.</li>
 <li>
 <b>PRINCIPAL:</b> possui apenas o módulo main do sistema.</li>
 </ul>
 Além disso existem os diretórios de Recursos, que possuem as imagens e os áudios; e o diretório de testes.
+<br>
+<br>
+Segue abaixo uma imagem retirada do PYCharm mostrando como o jogo foi subdivido em relação à camadas, assim como as classes existentes em cada camada:
+<br>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trabalho4/blob/master/diretorios.png?raw=true" alt="">
+<br>
 <br>
 <h4>
 <a id="7-teste-de-qualidade-de-cÓdigo" class="anchor" href="#7-teste-de-qualidade-de-c%C3%93digo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
@@ -232,16 +239,19 @@ Uma nova análise foi feita em uma versão com implementação da parte de Persi
 <img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/sonarPersistenciaFabrica.png?raw=true" alt="">
 <br>
 <br>
-Depois o padrão protótipo foi implementado. Podemos observar que a complexidade das funções diminuiu um pouco.
-<br>
-<br>
-<img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/sonarPrototipo.png?raw=true" alt="">
-<br>
-<br>
-A última versão teve os padrões Flyweight e Singleton implementados. A complexidade geral aumentou um pouco, porém os outros valores continuaram próximos.
+A versão seguinte teve os padrões Protótipo, Flyweight e Singleton implementados. A complexidade geral aumentou, porém a complexidade das funções diminuiu um pouco.
 <br>
 <br>
 <img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/sonarU.png?raw=true" alt="">
+<br>
+<br>
+A versão final do trabalho teve os padrões State, Memento e Observer implementados, além de novas funcionalidades adicionadas ao jogo. Como previsto, a complexidade geral aumentou um pouco, porém todos os outros valores tiveram uma melhora em seus números.
+<br>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trabalho4/blob/master/sonarTrabalho4.png?raw=true" alt="">
+<br>
+<br>
+Fazendo uma análise geral dos números gerados, foi possível perceber uma boa melhora com a aplicação dos códigos. Além de tornar o código mais limpo e organizado.
 <br>
 <br>
 <h4>
