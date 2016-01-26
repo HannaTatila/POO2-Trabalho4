@@ -100,7 +100,9 @@
 <a id="5padrões-de-projeto" class="anchor" href="#5padr%C3%B5es-de-projeto" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 <b>5.Padrões de Projeto</b> </h4>
 <br>
-<b>5.1 Padrão Método Fábrica</b> 
+<h4>
+<a id="51-padrão-método-fábrica" class="anchor" href="#51-padr%C3%A3o-m%C3%A9todo-f%C3%A1brica" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<b>5.1 Padrão Método Fábrica</b> </h4>
 <br>
 <br>
 <img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaFabrica.png?raw=true" alt="">
@@ -110,18 +112,22 @@
 No jogo foi criada uma FabricaSprites para abstrair a criação dos obstáculos, do personagem, das moedas e dos peixes esqueletos.
 <br>
 <br>
-<b>5.2 Padrão Protótipo</b> 
+<h4>
+<a id="52-padrão-protótipo" class="anchor" href="#52-padr%C3%A3o-prot%C3%B3tipo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<b>5.2 Padrão Protótipo</b> </h4>
 <br>
 <br>
 <img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaPrototipo.png?raw=true" alt="">
 <br>
 <br>
  A intenção do padrão Protótipo é especificar tipos de objetos a serem criados usando uma instância protótipo e criar novos objetos pela cópia desse protótipo.
-Precisamos criar novos objetos a partir de uma instância protótipo, que vai realizar uma cópia de si mesmo e retornar para o novo objeto.
+Precisamos criar novos objetos a partir de uma instância protótipo, que vai realizar uma cópia de si mesmo e retornar para o novo objeto.<br>
 Como o jogo cria vários obstáculos, moedas e peixes esqueletos durante uma partida, seria bem mais custoso instanciar toda vez um novo objeto. Aplicando esse padrão, a partir de uma instância de um PeixeEspadaProtótipo, por exemplo, é possível criar vários obstáculos a partir da cópia deste PeixeEspadaProtótipo.
 <br>
 <br>
-<b>5.3 Padrão Flyweight</b> 
+<h4>
+<a id="53-padrão-flyweight" class="anchor" href="#53-padr%C3%A3o-flyweight" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<b>5.3 Padrão Flyweight</b> </h4>
 <br>
 <br>
 <img src="https://github.com/HannaTatila/POO2-Trab03/blob/master/DiagramaFlyweight.png?raw=true" alt="">
@@ -130,17 +136,21 @@ Como o jogo cria vários obstáculos, moedas e peixes esqueletos durante uma par
  A intenção do padrão Flyweight é usar compartilhamento para suportar eficientemente grandes quantidades de objetos de granularidade fina. No jogo em questão, o padrão foi aplicado para o compartilhamento de imagens entre as entidades. A FlyweightFabrica é instanciada, por enquanto, apenas uma vez e nela todas as imagens dos obstáculos, do personagem, da moeda e do peixe esqueleto são carregadas de seus respectivos diretórios. Quando um método requisitar essas imagens (o que acontece várias vezes durante o jogo, já que vários obstáculos são impressos durante uma partida, assim como as moedas e os peixes esqueletos), elas já estarão carregadas e só terão que ser impressas na tela.
 <br>
 <br>
-<b>5.4 Padrão Singleton</b> 
+<h4>
+<a id="54-padrão-singleton" class="anchor" href="#54-padr%C3%A3o-singleton" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<b>5.4 Padrão Singleton</b> </h4>
 <br>
 <br>
  A solução implementada pelo padrão Flyweight é bem intuitiva. No entanto, na classe FlyweightFabrica fica centralizado o acesso a todos os objetos compartilhados. O que aconteceria se houvessem duas ou mais instâncias desta classe? Seriam criados vários objetos, sem nenhuma necessidade. Se eu criasse, por exemplo, uma outra AplJogo para utilizar outro módulo de jogo que também fizesse uso do FlyweightFabrica, esses novos objetos seriam criados desnecessariamente.
 Para evitar este problema foi implementado o padrão Singleton. Aplicando este padrão na classe fábrica, garantimos que apenas uma instância dela será utilizada em todo o projeto.
 <br>
 <br>
-<b>5.5 Padrão State</b> 
+<h4>
+<a id="55-padrão-state" class="anchor" href="#55-padr%C3%A3o-state" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<b>5.5 Padrão State</b> </h4>
 <br>
 <br>
- A intenção do padrão State é permitir a um objeto alterar seu comportamento quando seu estado interno muda. O objeto parecerá ter mudado de classe.
+ A intenção do padrão State é permitir a um objeto alterar seu comportamento quando seu estado interno muda. O objeto parecerá ter mudado de classe.<br>
 O padrão foi utilizado na implementação do Menu do jogo. Foi criada uma classe EstadoMenu que contém a interface básica de todos os estados do menu(Iniciar, Cadastrar, Ranking e Sair). No caso, as operações básicas que vão fazer parte da interface são: próximo valor, valor anterior e selecionar valor. Segue abaixo a implementação da classe EstadoMenu, demonstrando como representar uma interface em Python:
 <br>
 <br>
@@ -153,7 +163,34 @@ Todos os estados do menu implementaram as operações de troca de estado. Desse 
 <img src="https://github.com/HannaTatila/POO2-Trabalho4/blob/master/DiagramaState.png?raw=true" alt="">
 <br>
 <br>
-<b>5.? Padrão DAO</b> 
+<h4>
+<a id="56-padrão-memento" class="anchor" href="#56-padr%C3%A3o-memento" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<b>5.6 Padrão Memento</b> </h4>
+<br>
+<br>
+ O objetivo do padrão Memento é, sem violar o encapsulamento, capturar e externalizar um estado interno de um objeto, de maneira que o objeto possa ser restaurado para esse estado mais tarde. No jogo, quando o jogador coleta uma determinada quantidade de moedas, o jogo em si passa por uma evolução, o fundo, a música e o personagem são alterados.<br> 
+O estado interno do objeto é o personagem na forma de peixinho. Assim, o padrão Memento permite capturar o estado do personagem para que depois ele possa ser reutilizado. Então, quando o estado do personagem muda para o motoqueiro, o estado do peixinho fica guardado. Então quando o peixe motoqueiro é atingido por algum obstáculo, o estado do personagem é restaurado.
+<br>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trabalho4/blob/master/DiagramaMemento.png?raw=true" alt="">
+<br>
+<br>
+<h4>
+<a id="57-padrão-observer" class="anchor" href="#57-padr%C3%A3o-observer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<b>5.7 Padrão Observer</b> </h4>
+<br>
+<br>
+O objetivo do padrão Observer é definir uma dependência um para muitos entre objetos, de maneira que quando um objeto muda de estado todos os seus dependentes são notificados e atualizados automaticamente.<br>
+Esse padrão foi utilizado para controlar a detecção dos eventos de entrada do usuário através do teclado. Assim, quando uma tecla é digitada, os Controladores do Menu e Jogo são notificados e fazem mudanças relativas aos eventos detectados.
+Foi criada uma classe EventosTeclado que mantém o conjunto de dados e uma lista de dependentes deste conjunto de dados, assim a cada vez que o usuário digita uma tecla, todos os dependentes são notificados. 
+<br>
+<br>
+<img src="https://github.com/HannaTatila/POO2-Trabalho4/blob/master/DiagramaObserver.png?raw=true" alt="">
+<br>
+<br>
+<h4>
+<a id="58-padrão-dao" class="anchor" href="#58-padr%C3%A3o-dao" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<b>5.8 Padrão DAO</b> </h4>
 <br>
 <br>
  O padrão de projeto DAO nos permite separar a lógica de negócios da lógica de persistência de dados. Então foi criada uma classe DAOJogador que ficou responsável por trocar informações com o SGBD e fornecer operações de consulta e inserção de dados referentes ao cadastro e validação de dados do jogador.
