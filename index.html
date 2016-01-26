@@ -1,52 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640">
-
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
+    <meta charset="UTF-8">
     <title>Poo2-trabalho4 by HannaTatila</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
-    <a id="forkme_banner" href="https://github.com/HannaTatila/POO2-Trabalho4">View on GitHub</a>
-    <div class="shell">
+    <section class="page-header">
+      <h1 class="project-name">Poo2-trabalho4</h1>
+      <h2 class="project-tagline">Trabalho 4 da disciplina de POO2 - Criação do game Mar&amp;moto.</h2>
+      <a href="https://github.com/HannaTatila/POO2-Trabalho4" class="btn">View on GitHub</a>
+      <a href="https://github.com/HannaTatila/POO2-Trabalho4/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/HannaTatila/POO2-Trabalho4/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Poo2-trabalho4</h1>
-            <h2>Trabalho 4 da disciplina de POO2 - Criação do game Mar&amp;moto.</h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
-
-      <section id="downloads">
-        <span class="inner">
-          <a href="https://github.com/HannaTatila/POO2-Trabalho4/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/HannaTatila/POO2-Trabalho4/tarball/master" class="tgz"><em>download</em> .TGZ</a>
-        </span>
-      </section>
-
-
-      <span class="banner-fix"></span>
-
-
-      <section id="main_content">
-        <h2>
+    <section class="main-content">
+      <h2>
 <a id="trabalho-de-poo2" class="anchor" href="#trabalho-de-poo2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 <b>Trabalho de POO2</b> </h2>
 
@@ -251,14 +224,16 @@ A versão final do trabalho teve os padrões State, Memento e Observer implement
 <img src="https://github.com/HannaTatila/POO2-Trabalho4/blob/master/sonarTrabalho4.png?raw=true" alt="">
 <br>
 <br>
-Fazendo uma análise geral dos números gerados, foi possível perceber uma boa melhora com a aplicação dos códigos. Além de tornar o código mais limpo e organizado.
+Fazendo uma análise geral dos números gerados, foi possível perceber uma boa melhora(segundo as análises do Sonar) com a aplicação dos padrões. Além disso, ao longo do projeto foi possível perceber que a aplicação de parte dos padrões melhorou o desempenho do código. E outra parte tornou o código mais limpo e organizado.
 <br>
 <br>
 <h4>
 <a id="7-guia-do-jogador" class="anchor" href="#7-guia-do-jogador" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 <b>7. Guia do jogador</b> </h4>
 <br>
-<em>(* Para implementação do jogo foi utilizado o Python 3.4 *)</em>
+<em>(* Para implementação do jogo foi utilizado o Python 3.4, pygame 1.9.2 e a IDE PyCharm 4.5.4 *)</em>
+<br>
+<em>(* Para executar a aplicação, abra a IDE PyCharm e nela abra o projeto (File -&gt; Open... -&gt; Procure o projeto e selecione-o). Depois basta rodar a aplicação (no pacote principal clique com o botão direito do mouse sobre a classe App.py e selecione: Run 'App'). *)</em>
 <ul>
 <li>O jogo é todo controlado por comandos do teclado; </li>
 <li>Ao iniciar, o jogo apresenta uma tela de menu com as funcionalidades “INICIAR”, "CADASTRAR", "RANKING" e “SAIR”;</li>
@@ -277,22 +252,15 @@ Fazendo uma análise geral dos números gerados, foi possível perceber uma boa 
 <br>
 </li>
 </ul>
-      </section>
 
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>this project by <a href="https://github.com/HannaTatila">HannaTatila</a> can be found on <a href="https://github.com/HannaTatila/POO2-Trabalho4">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/HannaTatila/POO2-Trabalho4">Poo2-trabalho4</a> is maintained by <a href="https://github.com/HannaTatila">HannaTatila</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
 
-    </div>
+    </section>
 
-    
+  
   </body>
 </html>
